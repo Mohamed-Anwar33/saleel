@@ -19,6 +19,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'ar',
     fallbackLng: 'ar',
     debug: false,
     interpolation: {
