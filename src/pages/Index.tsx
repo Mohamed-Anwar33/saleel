@@ -9,9 +9,12 @@ import PartnersSection from "@/components/PartnersSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
+import { useDirection } from "@/hooks/useDirection";
+
 const Index = () => {
+  const { isRTL, direction } = useDirection();
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen bg-background ${isRTL ? 'rtl' : 'ltr'}`} dir={direction}>
       <Navigation />
       <HeroSection />
       <ProjectOverview />

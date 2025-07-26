@@ -72,10 +72,22 @@ const Navigation = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-elegant border-b border-border/50' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-28 mx-0 px-0 py-0 my-[10px]">
-            {/* Logo */}
-            <a href="/" className="flex items-center gap-3">
-              <img src={saleelLogo} alt="Saleel Al Qirawan Logo" className="w-40" />
-            </a>
+            {/* Logo + Mobile Language Button */}
+            <div className="flex items-center gap-6 md:gap-6 md:items-center md:w-auto w-full md:justify-start">
+              <a href="/" className="flex items-center gap-3">
+                <img src={saleelLogo} alt="Saleel Al Qirawan Logo" className="w-40" />
+              </a>
+              {/* Mobile Language Switcher */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={toggleLang}
+                className="block md:hidden px-5 py-2 rounded-xl shadow-lg border-2 border-primary bg-white text-primary font-bold ml-4"
+                style={{marginLeft: '16px'}}
+              >
+                {currentLang === "ar" ? "EN" : "عربي"}
+              </Button>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
